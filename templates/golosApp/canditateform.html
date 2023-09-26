@@ -1,0 +1,33 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block title %}Главная страница{% endblock %}
+{% block content %}
+        <div class="container mx-auto">
+            <div class="card w-100 bg-base-100 shadow-xl">
+                <div class="card-body">
+                    {% if found_match %}
+                        {% for us in userpop2 %}
+                        <a style="position: absolute; left: 68%; top: 85%;" href="{% url 'golosApp:canditfre' pk=us.id user_id=user.id %}" class="butt-all">Редактировать форму</a>
+                            <div style="position: absolute; left: 70%; top: 5%;"><center><h3 style="font-weight: 600;">Фото формы:</h3><img src="{{ us.image.url }}" width = "200px" id = "photo"></center></div>
+            <b style="font-weight: 800;">Имя: </b>
+            <p style="color:black;">{{ us.first_name }}</p>
+            <b style="font-weight: 800; margin-top: 15px;">Фамилия: </b>
+            <p style="color:black;">{{ us.last_name }}</p>
+            <b style="font-weight: 800; margin-top: 15px;">Дата рождения: </b>
+            <p style="color:#000000;">{{ us.birthdate }}</p>
+            <b style="font-weight: 800; margin-top: 15px;">Коротко о себе: </b>
+            <p style="color:#000000;">{{ us.bio }}</p>
+                    <b style="font-weight: 800; margin-top: 15px;">Партия: </b>
+            <p style="color:#000000;">{{ us.partiya }}</p>
+
+                        {% endfor %}
+                    {% else %}
+                    <center>
+                        <h2 style="font-size: 32px; margin-bottom: 30px;">ВНИМАНИЕ! У вас нет формы кандидата</h2>
+                        <a class="butt-all" href="{% url 'golosApp:canditfrn' user_id=user.id %}">Создать форму</a>
+                    </center>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+{% endblock %}
