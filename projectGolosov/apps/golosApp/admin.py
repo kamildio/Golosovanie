@@ -8,4 +8,4 @@ class CandidateFormAdmin(admin.ModelAdmin):
 
 @admin.register(Golos)
 class CandidateFormAdmin(admin.ModelAdmin):
-    list_display = ('voter', 'candidate')
+    list_display = ('candidate', 'voter')

@@ -18,12 +18,12 @@ class CanditeForm(models.Model):
 
 class Golos(models.Model):
     id = models.AutoField(primary_key=True)
-    candidate = models.ForeignKey('users.CustomUser', on_delete=models.CASCADE)
-    voter = models.ForeignKey(CanditeForm, on_delete=models.CASCADE)
+    candidate = models.ForeignKey(CanditeForm, on_delete=models.CASCADE)
+    voter = models.ForeignKey('users.CustomUser', on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Голоса'
-        verbose_name_plural = 'Голос'
+        verbose_name_plural = 'Голоса'
 
     def __str__(self):
         return self.id
