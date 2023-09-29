@@ -2,11 +2,11 @@
 {% block title %}Главная страница{% endblock %}
 {% block content %}
         <div class="container mx-auto">
-            {% for us in users %}
+            {% for cndts in candidates %}
             <div class="card w-100 bg-base-100 shadow-xl mb-5">
                 <div class="card-body">
-                    <h2 class="card-title mb-5" style="font-size: 32px;">Кандат: {{ us.first_name }}</h2>
-                    <h4 class="mb-5">Фамилия {{ us.last_name }}</h4>
+                    <h2 class="card-title mb-5" style="font-size: 32px;">Кандат: {{ cndts.first_name }}</h2>
+                    <h4 class="mb-5">Фамилия {{ cndts.last_name }}</h4>
                 </div>
             </div>
             {% endfor %}
