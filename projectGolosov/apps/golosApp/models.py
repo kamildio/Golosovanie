@@ -1,7 +1,6 @@
 from django.db import models
 
 class CanditeForm(models.Model):
-    id = models.AutoField(primary_key=True)
     candidate = models.ForeignKey('users.CustomUser', on_delete=models.CASCADE, null=True)
     first_name = models.TextField(max_length=75, blank=True)
     last_name = models.TextField(max_length=75, blank=True)
@@ -17,14 +16,14 @@ class CanditeForm(models.Model):
     def __str__(self):
         return self.first_name
 
-class GolosCounter(models.Model):
-    golos_id = models.AutoField(primary_key=True)
-    voter = models.ForeignKey('users.CustomUser', on_delete=models.CASCADE)
-    candidate = models.ForeignKey(CanditeForm, on_delete=models.CASCADE)
+class Golos(models.Model):
+    id = models.AutoField(primary_key=True)
+    candidate = models.ForeignKey('users.CustomUser', on_delete=models.CASCADE)
+    voter = models.ForeignKey(CanditeForm, on_delete=models.CASCADE)
 
     class Meta:
-        verbose_name = 'Счет голосов'
-        verbose_name_plural = 'Счета голосов'
+        verbose_name = 'Голоса'
+        verbose_name_plural = 'Голос'
 
     def __str__(self):
-        return self.first_name
+        return self.id

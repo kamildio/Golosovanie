@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'projectGolosov.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'gol',
+        'NAME': 'golo',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost', # Или адрес сервера базы данных

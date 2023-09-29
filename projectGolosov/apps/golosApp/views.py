@@ -9,9 +9,9 @@ def homePage(request):
     return render(request, "golosApp/index.html")
 
 def candidatePage(request):
-    candidates = CanditeForm.objects.all
+    users = CanditeForm.objects.all
     return render(request, "golosApp/candidates.html", {
-        'candidates': candidates
+        'users': users
     })
 
 def candidateForm(request, user_id):
