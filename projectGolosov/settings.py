@@ -89,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'golosa2',
         'USER': 'postgres',
-        'PASSWORD': '123456789',
+        'PASSWORD': '1234',
         'HOST': 'localhost', # Или адрес сервера базы данных
         'PORT': '5432',           # Порт базы данных
     }
